@@ -25,9 +25,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set BASE_PATH environment variable
+        run: echo "BASE_PATH=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
+
       - name: Build
         env:
-          BASE_PATH: '/${{ github.event.repository.name }}'
+          BASE_PATH: ${{ github.repository }}
         run: npm run build
 
       - name: Upload Artifacts
