@@ -17,22 +17,22 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Remove package-lock.json and node-modules
-        run: rmdir node_modules && rm package-lock.json
-        
-      - name: Install dependencies
-        run: npm i
+      - name: Remove node_modules and package-lock.json
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
 
-      - name: build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
         env:
           BASE_PATH: '/${{ github.event.repository.name }}'
-        run: |
-          npm run build
+        run: npm run build
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # this should match the `pages` option in your adapter-static options
           path: 'build/'
 
   deploy:
