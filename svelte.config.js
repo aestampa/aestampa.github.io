@@ -14,6 +14,9 @@ const config = {
     adapter: adapter(),
     files: {
       appTemplate: 'index.html' // Add this line
+    },
+    paths: {
+      base: process.env.NODE_ENV === 'production' ? '/sveltekit-github-pages' : '',
     }
   },
 };
