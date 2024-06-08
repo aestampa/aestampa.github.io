@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "build": "rm -rf build && svelte-kit build && touch .svelte-kit/static/build/.nojekyll",
+    "deploy": "npm run build && npx gh-pages -d .svelte-kit/static/build -t true"
   },
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
@@ -16,6 +17,7 @@
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.32",
     "postcss-load-config": "^5.0.2",
     "svelte": "^4.2.7",
