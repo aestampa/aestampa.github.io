@@ -1,55 +1,50 @@
 <script lang="ts">
-	import { Button, Li, List, P } from "flowbite-svelte";
+	import { Button, Heading, Li, List, P } from "flowbite-svelte";
 	import { OnMount } from "fractils";
 	import { fade, fly } from "svelte/transition";
 	import { Timeline, TimelineItem } from "flowbite-svelte";
 	import Profile from "$lib/images/abby.jpg";
-
-	export let scrollPosition: number = 0;
-	let scrolled: boolean;
-	$: {
-		if (scrollPosition >= 400) scrolled = true;
-	}
 </script>
 
 <body>
-	{#if scrolled}
-		<OnMount>
-			<br />
-			<div class="ml-36 font-serif" in:fly={{ x: -100, duration: 600 }}>
-				<P size="6xl" color="black">ABOUT ME</P>
-			</div>
-			<br />
-			<div class="grid grid-cols-2 gap-4">
-				<div class="ml-36 font-serif">
-					<div
-						class="bg-black/50 max-w-3xl px-4 rounded-lg"
-						in:fly={{ x: -100, duration: 800 }}
-					>
-						<br />
-						<P class="text-justify">
-							Hi, my name is Abby and I am a software developer
-							specializing in front-end development. I recently
-							graduated with my Bachelor of Science in Computer
-							Science at the University of Colorado at Colorado
-							Springs and later became a software developer at
-							Zivaro, where I expanded my skills in software
-							development.
-						</P>
-						<br />
-						<P
-							>Below is a list of events leading up to this
-							milestone.</P
-						>
-						<br />
-					</div>
+	<OnMount>
+		<br />
+		<br />
+		<div class="grid grid-cols-2 gap-4">
+			<div class="ml-36 font-serif">
+				<div
+					class="font-serif bg-black/50 max-w-3xl px-4 rounded-lg"
+					in:fly={{ x: -100, duration: 600 }}
+				>
+					<P size="6xl">ABOUT ME</P>
+				</div>
+				<br />
+				<div
+					class="bg-black/60 max-w-3xl px-4 rounded-lg"
+					in:fly={{ x: -100, duration: 800 }}
+				>
 					<br />
-					<div
-						class="bg-black/50 max-w-3xl px-4 rounded-lg text-white"
-						in:fly={{ x: -100, duration: 1200 }}
+					<P class="text-justify">
+						Hi, my name is Abby and I am a software developer
+						specializing in front-end development. I recently
+						graduated with my Bachelor of Science in Computer
+						Science at the University of Colorado at Colorado
+						Springs and later became a software developer at Zivaro,
+						where I expanded my skills in software development.
+					</P>
+					<br />
+					<P
+						>Below is a list of events leading up to this milestone.</P
 					>
-						<br />
-						<div>
+					<br />
+				</div>
+				<br />
+				<div
+					class="bg-black/60 max-w-3xl px-4 rounded-lg text-white"
+					in:fly={{ x: -100, duration: 1200 }}
+				>
+					<br />
+					<div>
 						<Timeline>
 							<TimelineItem
 								title="Started school at University of Colorado at Colorado Springs"
@@ -160,16 +155,26 @@
 								</List>
 							</TimelineItem>
 						</Timeline>
-						
+
 						<br />
 					</div>
-					<br />
-					<P class="text-justify">
-						Throughout this journey, I learned countless skills
-						relevant to software development:
-					</P>
-					<br />
-					<div class="grid grid-cols-3 gap-4 dark:text-white bg-black/50 max-w-3xl px-4 rounded-lg">
+				</div>
+			</div>
+			<div class="mr-36">
+				<img
+					src={Profile}
+					alt="Abby's Picture"
+					width="60%"
+					height="60%"
+					class="rounded shadow-xl border-black"
+					in:fly={{ x: -100, duration: 800 }}
+				/>
+				<br />
+				<div
+					class="font-serif bg-black/60 px-4 rounded-lg text-white flex justify-center"
+				>
+					<div class="grid grid-cols-3 gap-4 dark:text-white max-w-3xl px-4 rounded-lg">
+						
 						<List>
 							<Li>HTML</Li>
 							<Li>CSS (Tailwind)</Li>
@@ -198,26 +203,51 @@
 						</List>
 					</div>
 				</div>
-				<img
-					src={Profile}
-					alt="Abby's Picture"
-					width="60%"
-					height="60%"
-					in:fly={{ x: -100, duration: 800 }}
-				/>
 			</div>
-			<br />
-		</OnMount>
-	{:else}
-		<div class="h-96" />
-		<div class="h-96" />
-		<div class="h-96" />
-	{/if}
+		</div>
+	</OnMount>
 </body>
+
+<!--
+	<br />
+						<P class="text-justify">
+							Throughout this journey, I learned countless skills
+							relevant to software development:
+						</P>
+						<br />
+					<div class="grid grid-cols-3 gap-4 dark:text-white max-w-3xl px-4 rounded-lg">
+						
+						<List>
+							<Li>HTML</Li>
+							<Li>CSS (Tailwind)</Li>
+							<Li>JavaScript (Svelte)</Li>
+							<Li>TypeScript</Li>
+							<Li
+								>Test Driven Development (Vitest & PlayWright)</Li
+							>
+							<Li>Git</Li>
+						</List>
+						<List>
+							<Li>Python</Li>
+							<Li>Java</Li>
+							<Li>C#</Li>
+							<Li>C</Li>
+							<Li>C++</Li>
+							<Li>SQL</Li>
+						</List>
+						<List>
+							<Li>Object Oriented Programming (OOP)</Li>
+							<Li>Visual Studio</Li>
+							<Li>Visual Studio Code</Li>
+							<Li>Eclipse</Li>
+							<Li>Azure DevOps</Li>
+							<Li>JSON, RESTful API Integration</Li>
+						</List>
+					</div>
+-->
 
 <style>
 	body {
-		background-image: url("https://i.pinimg.com/originals/3a/ac/74/3aac747a8aa53707fe2d6e2d0af91e57.jpg");
-		background-size: cover;
+		background-image: url("https://cdn.vectorstock.com/i/preview-1x/42/28/marple-mosaic-seamless-pattern-with-gold-frame-vector-30564228.jpg");
 	}
 </style>

@@ -1,10 +1,9 @@
 <script lang="ts">
-    import AboutMe from "$lib/components/About.svelte";
     import { Button, NavLi, NavUl, Navbar, P } from "flowbite-svelte";
     import { OnMount } from "fractils";
     import { fade, fly } from "svelte/transition";
-    import ScrollPosition from "$lib/components/ScrollPosition.svelte";
     import { writable, type Writable } from "svelte/store";
+    import HomeBackground from "$lib/images/gold-black-abstract.jpg";
     let scrollPosition: Writable<number> = writable(0);
 
     const scroll = (position: number) => {
@@ -14,68 +13,57 @@
         });
     }
 </script>
-<ScrollPosition
-    bind:scrollPosition
-/>
-<div class="fixed top-0 left-0 right-0 bg-black z-50">
-    <Navbar color="none">
-      <NavUl
-        divClass="md:block"
-        ulClass="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium"
-      >
-        <NavLi nonActiveClass={$scrollPosition < 729 ? "text-white cursor-pointer" : "text-gray-400 cursor-pointer"} on:click={() => {scroll(0)}}>Home</NavLi>
-        <NavLi nonActiveClass={$scrollPosition < 2000 && $scrollPosition >= 729 ? "text-white cursor-pointer" : "text-gray-400 cursor-pointer"} on:click={() => {scroll(730)}}>About Me</NavLi>
-        <NavLi nonActiveClass="text-gray-400 cursor-pointer" on:click={() => {scroll(0)}}>Projects</NavLi>
-      </NavUl>
-    </Navbar>
-  </div>
-<OnMount>
-    <body in:fade={{ duration: 800 }}>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <div class="ml-36 font-serif" in:fly={{ x: -100, duration: 800 }}>
-            <div>
-                <P size="7xl">ABIGAIL</P>
-                <P size="7xl">ESTAMPADOR</P>
-                <P size="2xl">Software Developer</P>
-                <P>Colorado Springs</P>
-                <br />
-                <Button
-                    color="dark"
-                    size="xl"
-                    on:click={() => {scroll(730)}}
-                >
-                    More About Me
-                </Button>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <OnMount>
+        <div class="font-serif flex justify-center" in:fly={{ x: 100, duration: 1000 }}>
+            <div class="bg-black/75 px-32 py-16 rounded-lg">
+                <div class="flex meie-script-regular text-center">
+                    <P size="5xl">Abigail Estampador</P>
+                </div>
+                <div class="flex rosarivo-regular text-center">
+                    <P size="2xl">Junior Software Engineer from Colorado Springs</P>
+                </div>
             </div>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-    </body>
-</OnMount>
-<br />
-
-<AboutMe scrollPosition={$scrollPosition} />
-
+    </OnMount>
+</body>
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Meie+Script&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Meie+Script&family=Rosarivo:ital@0;1&display=swap');
+
     body {
-        background-image: url("https://external-preview.redd.it/FD6y7-wtrodDQ0BYBBnbo_6aNpjQID88kyoGBrVaHeg.jpg?auto=webp&s=68f231f1838e78e4a8463563fbe2b30288c192c1");
+        background-image: url("../lib/images/city-background.png");
         background-size: 100%;
         background-attachment: fixed;
         filter: brightness(0.8);
+    }
+
+    .meie-script-regular {
+        font-family: "Meie Script", cursive;
+        font-weight: bolder;
+        font-style: normal;
+        font-size: 20px;
+    }
+
+    .rosarivo-regular {
+        font-family: "Rosarivo", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
     }
 </style>

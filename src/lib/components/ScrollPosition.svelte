@@ -1,8 +1,13 @@
 <script lang="ts">
-    import { writable } from 'svelte/store';
+  import { writable } from "svelte/store";
 
-    export let scrollPosition = writable(0);
-    window ? window.addEventListener('scroll', () => {
+  export let scrollPosition = writable(0);
+
+  try {
+    window.addEventListener("scroll", () => {
       scrollPosition.set(window.scrollY);
-    }) : scrollPosition = writable(0);
+    });
+  } catch (e) {
+    console.log("Error getting scroll position");
+  }
 </script>
