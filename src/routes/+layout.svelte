@@ -20,7 +20,7 @@
         <div class="flex items-center space-x-4">
           <NavLi href="/"><img src={Initials} alt="Abby's Initials" /></NavLi>
         </div>
-        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+        <div class="flex items-center space-x-4">
           <NavLi href="mailto:aestampa@outlook.com">
             <img src={Email} alt="Email Logo" />
           </NavLi>

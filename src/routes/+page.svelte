@@ -93,15 +93,15 @@
             in:fly={{ y: 75, duration: 1000 }}
         >
             <div
-                class="bg-black/75 px-8 md:px-32 py-8 md:py-16 rounded-lg text-white w-full max-w-screen-md"
+                class="bg-black/75 px-16 py-8 md:py-16 rounded-lg text-white w-full max-w-screen-md"
             >
                 <div
-                    class="flex flex-col text-center justify-center meie-script-regular"
+                    class="flex text-center justify-center meie-script-regular"
                 >
                     <P size="5xl">Abigail Estampador</P>
                 </div>
                 <div
-                    class="flex flex-col text-center justify-center mt-4 rosarivo-regular"
+                    class="flex text-center justify-center mt-4 rosarivo-regular"
                 >
                     <P size="2xl"
                         >Junior Software Engineer from Colorado Springs</P
@@ -127,8 +127,6 @@
     <br />
 </body>
 <div class="bg-customGray p-8 md:p-16 text-white" use:scrollRef={"about"}>
-    <br />
-    <br />
     {#if seenAbout}
         <div class="mx-8 md:mx-36" in:fly={{ y: 50, duration: 1000 }}>
             <div class="flex flex-col md:grid md:grid-cols-2 gap-10">
@@ -201,7 +199,7 @@
             </div>
         
             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-                <div class="card w-full h-full">
+                <div class="flex justify-center card w-full h-full">
                     <Card
                         img={SvelteLogo}
                         on:click={() => (window.location.href = "https://github.com/aestampa/aestampa.github.io")}
@@ -215,7 +213,7 @@
                         </p>
                     </Card>
                 </div>
-                <div class="card w-full h-full">
+                <div class="flex justify-center card w-full h-full">
                     <Card
                         img={RubyOnRailsLogo}
                         on:click={() => (window.location.href = "https://github.com/aestampa/Portfolio")}
@@ -255,7 +253,6 @@
     body {
         background-image: url("../lib/images/city-background.png");
         width: 100%;
-        height: 100vh;
         background-attachment: fixed;
         filter: brightness(0.8);
         background-size: cover;
