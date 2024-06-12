@@ -68,15 +68,20 @@
         { name: "PlayWright" },
     ];
 
+    let innerHeight: number = 0;
+    let innerWidth: number = 0;
+
+    $: showAll = innerHeight >= 920;
+
     $: {
         scrollY >= 328 ? (seenAbout = true) : "";
         scrollY >= 1000 ? (seenProjects = true) : "";
     }
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY bind:innerWidth bind:innerHeight />
 
-<body>
+<div class="landing">
     <br />
     <br />
     <br />
@@ -125,123 +130,141 @@
     <br />
     <br />
     <br />
-</body>
-<div class="bg-customGray p-8 md:p-16 text-white" use:scrollRef={"about"}>
-    {#if seenAbout}
-        <div class="mx-8 md:mx-36" in:fly={{ y: 50, duration: 1000 }}>
-            <div class="flex flex-col md:grid md:grid-cols-2 gap-10">
-                <div>
-                    <div class="rosarivo-regular">
-                        <P size="3xl">About Me</P>
-                        <br />
-                        <P size="lg">
-                            Hi, my name is Abby and I am a junior software
-                            engineer specializing in front-end development. On
-                            August 2023, I earned a Bachelor of Science in
-                            Computer Science at the University of Colorado at
-                            Colorado Springs. I plan to further my education by
-                            pursuing a Master of Science in Computer Science
-                            starting this fall at Georgia Institute of
-                            Technology.
-                        </P>
-                        <br />
-                        <div
-                            class="flex hover-text sarala-bold cursor-pointer tracking-wide"
-                            use:scrollTo={"Projects"}
-                        >
-                            <div class="display-inline">
-                                <P size="sm">SEE MY PROJECTS &nbsp;</P>
+    <div class="bg-customGray p-8 md:p-16 text-white" use:scrollRef={"about"}>
+        {#if seenAbout || showAll}
+            <div class="mx-8 md:mx-36" in:fly={{ y: 50, duration: 1000 }}>
+                <div class="flex flex-col md:grid md:grid-cols-2 gap-10">
+                    <div>
+                        <div class="rosarivo-regular">
+                            <P size="3xl">About Me</P>
+                            <br />
+                            <P size="lg">
+                                Hi, my name is Abby and I am a junior software
+                                engineer specializing in front-end development.
+                                On August 2023, I earned a Bachelor of Science
+                                in Computer Science at the University of
+                                Colorado at Colorado Springs. I plan to further
+                                my education by pursuing a Master of Science in
+                                Computer Science starting this fall at Georgia
+                                Institute of Technology.
+                            </P>
+                            <br />
+                            <div
+                                class="flex hover-text sarala-bold cursor-pointer tracking-wide"
+                                use:scrollTo={"Projects"}
+                            >
+                                <div class="display-inline">
+                                    <P size="sm">SEE MY PROJECTS &nbsp;</P>
+                                </div>
+                                <div class="display-inline">
+                                    <img src={Arrow} alt="Arrow" />
+                                </div>
                             </div>
-                            <div class="display-inline">
-                                <img src={Arrow} alt="Arrow" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="rosarivo-regular">
+                            <P size="3xl">Technical Skills</P>
+                            <br />
+                        </div>
+                        <div class="rosarivo-regular grid grid-cols-2 gap-4">
+                            <div class="w-full">
+                                <Listgroup active items={tools} let:item>
+                                    <li>{item.name}</li>
+                                </Listgroup>
+                            </div>
+                            <div class="w-full">
+                                <Listgroup active items={languages} let:item>
+                                    <li>{item.name}</li>
+                                </Listgroup>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div class="rosarivo-regular">
-                        <P size="3xl">Technical Skills</P>
-                        <br />
-                    </div>
-                    <div class="rosarivo-regular grid grid-cols-2 gap-4">
-                        <div class="w-full">
-                            <Listgroup active items={tools} let:item>
-                                <li>{item.name}</li>
-                            </Listgroup>
-                        </div>
-                        <div class="w-full">
-                            <Listgroup active items={languages} let:item>
-                                <li>{item.name}</li>
-                            </Listgroup>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
-    {/if}
-</div>
-<div>
-    <div use:scrollRef={"Projects"}>
-        <br />
-        <br />
-        <br />
-        {#if seenProjects}
-        <div class="flex flex-col items-center space-y-8 mx-2 md:mx-4 lg:mx-8">
-            <div
-                class="rosarivo-regular bg-black/75 px-4 md:px-16 lg:px-32 py-8 md:py-16 rounded-lg text-white w-full sm:w-3/4 lg:w-1/2"
-                in:fly={{ y: 50, duration: 1000 }}
-            >
-                <div class="text-center">
-                    <P size="4xl">Portfolio</P>
-                    <br />
-                    <P size="2xl">Explore Projects Here</P>
-                </div>
-            </div>
-        
-            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
-                <div class="flex justify-center card w-full h-full">
-                    <Card
-                        img={SvelteLogo}
-                        on:click={() => (window.location.href = "https://github.com/aestampa/aestampa.github.io")}
-                        class="h-full"
-                    >
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Personal Website
-                        </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-                            Svelte-based website and improvement from portfolio website.
-                        </p>
-                    </Card>
-                </div>
-                <div class="flex justify-center card w-full h-full">
-                    <Card
-                        img={RubyOnRailsLogo}
-                        on:click={() => (window.location.href = "https://github.com/aestampa/Portfolio")}
-                        class="h-full"
-                    >
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            Portfolio Website
-                        </h5>
-                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
-                            Ruby-on-Rails-based website that displays some projects done over the course of my college career.
-                        </p>
-                    </Card>
-                </div>
-            </div>
-        </div>
-        
         {/if}
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+    </div>
+    <div class="bg-gray">
+        <div use:scrollRef={"Projects"}>
+            <br />
+            <br />
+            <br />
+            {#if seenProjects || showAll}
+                <div
+                    class="flex flex-col items-center space-y-8 mx-2 md:mx-4 lg:mx-8"
+                >
+                    <div
+                        class="rosarivo-regular bg-black/75 px-4 md:px-16 lg:px-32 py-8 md:py-16 rounded-lg text-white w-full sm:w-3/4 lg:w-1/2"
+                        in:fly={{ y: 50, duration: 1000 }}
+                    >
+                        <div class="text-center">
+                            <P size="4xl">Portfolio</P>
+                            <br />
+                            <P size="2xl">Explore Projects Here</P>
+                        </div>
+                    </div>
+
+                    <div
+                        class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
+                    >
+                        <div class="flex justify-center card w-full h-full">
+                            <Card
+                                img={SvelteLogo}
+                                on:click={() =>
+                                    (window.location.href =
+                                        "https://github.com/aestampa/aestampa.github.io")}
+                                class="h-full"
+                            >
+                                <h5
+                                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                                >
+                                    Personal Website
+                                </h5>
+                                <p
+                                    class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight"
+                                >
+                                    Svelte-based website and improvement from
+                                    portfolio website.
+                                </p>
+                            </Card>
+                        </div>
+                        <div class="flex justify-center card w-full h-full">
+                            <Card
+                                img={RubyOnRailsLogo}
+                                on:click={() =>
+                                    (window.location.href =
+                                        "https://github.com/aestampa/Portfolio")}
+                                class="h-full"
+                            >
+                                <h5
+                                    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                                >
+                                    Portfolio Website
+                                </h5>
+                                <p
+                                    class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight"
+                                >
+                                    Ruby-on-Rails-based website that displays
+                                    some projects done over the course of my
+                                    college career.
+                                </p>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+            {/if}
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </div>
     </div>
 </div>
 
@@ -250,7 +273,7 @@
     @import url("https://fonts.googleapis.com/css2?family=Meie+Script&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Meie+Script&family=Rosarivo:ital@0;1&display=swap");
 
-    body {
+    .landing {
         background-image: url("../lib/images/city-background.png");
         width: 100%;
         background-attachment: fixed;
