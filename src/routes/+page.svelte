@@ -127,10 +127,11 @@
     <br />
     <br />
     <br />
+    <div use:scrollRef={"about"} />
     <br />
     <br />
     <br />
-    <div class="bg-customGray p-8 md:p-16 text-white" use:scrollRef={"about"}>
+    <div class="bg-customGray p-8 md:p-16 text-white">
         {#if seenAbout || showAll}
             <div class="mx-8 md:mx-36" in:fly={{ y: 50, duration: 1000 }}>
                 <div class="flex flex-col md:grid md:grid-cols-2 gap-10">
