@@ -109,7 +109,7 @@
                     class="flex text-center justify-center mt-4 rosarivo-regular"
                 >
                     <P size="2xl"
-                        >Junior Software Engineer from Colorado Springs</P
+                        >Software Engineer from Colorado Springs</P
                     >
                 </div>
                 <NavigationArrow
@@ -144,10 +144,11 @@
                                 engineer specializing in front-end development.
                                 On August 2023, I earned a Bachelor of Science
                                 in Computer Science at the University of
-                                Colorado at Colorado Springs. I plan to further
-                                my education by pursuing a Master of Science in
-                                Computer Science starting this fall at Georgia
-                                Institute of Technology.
+                                Colorado at Colorado Springs. I am currently
+                                pursuing a Master of Science in
+                                Computer Science at Georgia Tech
+                                with a target graduation
+                                date of May 2027.
                             </P>
                             <br />
                             <div
