@@ -17,13 +17,11 @@
 
 <div class="flex flex-col min-h-screen">
   <div class="fixed top-0 left-0 right-0 bg-black opacity-80 z-50">
-    <Navbar color="none">
+    <Navbar color="none" class="">
       <NavBrand href="/">
         <img src={Initials} alt="Abby's Initials" />
-      </NavBrand>
-      <div class="flex md:order-2">
         <NavUl>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
             <NavLi href="mailto:aestampa@outlook.com">
               <img src={Email} alt="Email Logo" />
             </NavLi>
@@ -35,8 +33,8 @@
             </NavLi>
           </div>
         </NavUl>
-        <NavHamburger />
-      </div>  
+      </NavBrand>
+      <NavHamburger color="dark" class1="w-full md:flex md:w-auto md:order-1"/>
       <!--
       <NavUl >
         <div class="flex items-center space-x-8">
