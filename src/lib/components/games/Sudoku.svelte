@@ -294,7 +294,7 @@
 <div class="h-full">
     {#if showGrid}
         <div
-            class="flex grid grid-cols-3 mx-40"
+            class="flex grid grid-cols-3 xs:mx-16 sm:mx-40 md:mx-50 lg:mx-60"
             in:fly={{ x: -1000, duration: 1000 }}
             out:fly={{ x: 1000, duration: 1000, opacity: 0 }}
         >

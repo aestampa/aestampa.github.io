@@ -10,6 +10,9 @@ const config = {
 
   theme: {
     extend: {
+      screens: {
+        'xs': '480px', // Example: adding a custom 'xs' breakpoint at 480px
+      },
       fontFamily: {
         'serif': ['"Proxima Nova"', ...defaultTheme.fontFamily.serif],
       },
