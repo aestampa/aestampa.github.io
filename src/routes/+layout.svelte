@@ -17,36 +17,39 @@
 
 <div class="flex flex-col min-h-screen">
   <div class="fixed top-0 left-0 right-0 bg-black opacity-80 z-50">
-    <Navbar color="none" class="">
+    <Navbar color="none" class="lg:ml-8">
       <NavBrand href="/">
         <img src={Initials} alt="Abby's Initials" />
-        <NavUl>
-          <div class="flex items-center space-x-2">
-            <NavLi href="mailto:aestampa@outlook.com">
-              <img src={Email} alt="Email Logo" />
-            </NavLi>
-            <NavLi href="https://github.com/aestampa">
-              <img src={GitHub} alt="GitHub Logo" />
-            </NavLi>
-            <NavLi href="https://www.linkedin.com/in/abigail-e-a2b069281">
-              <img src={LinkedIn} alt="LinkedIn Logo" />
-            </NavLi>
-          </div>
-        </NavUl>
+        <div class="flex items-center space-x-2 ml-8">
+          <img src={Email} alt="Email Logo" />
+          <img src={GitHub} alt="GitHub Logo" />
+          <img src={LinkedIn} alt="LinkedIn Logo" />
+        </div>
       </NavBrand>
-      <NavHamburger color="dark" class1="w-full md:flex md:w-auto md:order-1"/>
-      <!--
-      <NavUl >
-        <div class="flex items-center space-x-8">
+      <NavHamburger color="dark" class1="w-full md:flex md:w-auto md:order-2"/>
+      <NavUl class="sm:mr-8 md:mr-18 lg:mr-36">
           <NavLi href="/">
             Home
           </NavLi>
           <NavLi href="/arcade">
             Arcade
           </NavLi>
+      </NavUl>
+      <!--
+      <NavUl>
+        <div class="flex items-center space-x-2">
+          <NavLi href="mailto:aestampa@outlook.com">
+            <img src={Email} alt="Email Logo" />
+          </NavLi>
+          <NavLi href="https://github.com/aestampa">
+            <img src={GitHub} alt="GitHub Logo" />
+          </NavLi>
+          <NavLi href="https://www.linkedin.com/in/abigail-e-a2b069281">
+            <img src={LinkedIn} alt="LinkedIn Logo" />
+          </NavLi>
         </div>
       </NavUl>
-      -->
+      -->      
     </Navbar>
   </div>
   <slot />

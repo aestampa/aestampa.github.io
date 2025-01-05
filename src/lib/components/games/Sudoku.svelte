@@ -9,8 +9,11 @@
     } from "flowbite-svelte";
     import { onMount, onDestroy } from "svelte";
     import { formatTime } from "$lib/helpers/helpers";
-    import { OnMount } from "fractils";
+    import { Icon } from "svelte-icons-pack";
     import { fly } from "svelte/transition";
+    import { AiFillInfoCircle } from "svelte-icons-pack/ai";
+    import Eraser from "$lib/icons/eraser.svg";
+    import SimpleModal from "$lib/components/elements/SimpleModal.svelte";
 
     const maxRows = 9;
     const maxCols = 9;
@@ -47,10 +50,13 @@
 
     let selectedIndex: number[] = [-1, -1];
 
-    let numOmissions: number = 50;
+    let numOmissions: number = 1;
     let numMistakes: number = 0;
     let timer: number = 0;
     let showGrid: boolean = false;
+    let showModal: boolean = false;
+    let succeeded: boolean = false;
+    let failed: boolean = false;
     let interval;
 
     const updateGrid = () => {
@@ -67,6 +73,8 @@
         }
         if (complete) {
             solvedSudoku = true;
+            succeeded = true;
+            showModal = true;
             executeGameOver();
         }
     };
@@ -91,10 +99,15 @@
     };
 
     const createSudokuPuzzle = () => {
+        clearInterval(interval);
         showGrid = false;
-        fillBox(0, 2);
-        fillBox(3, 5);
-        fillBox(6, 8);
+        succeeded = false;
+        failed = false;
+        showModal = false;
+        numMistakes = 0;
+        for (let i = 0; i < maxRows; i += 3) {
+            fillBox(i, i + 2);
+        }
         try {
             fillRemaining(completedSudoku, 0, 3);
         } catch (e) {
@@ -114,9 +127,10 @@
         countOccurrences(grid);
         if (newPuzzle) newPuzzle = false;
         if (solvedSudoku) solvedSudoku = false;
+        timer = 0;
         interval = setInterval(() => {
             timer += 1; // Increment timer every second
-        }, 3000);
+        }, 1000);
         showGrid = true;
     };
 
@@ -173,10 +187,7 @@
 
     const shuffleArray = (arr: number[]) => {
         for (let i = arr.length - 1; i > 0; i--) {
-            // Random index to swap with the current element
             const j = Math.floor(Math.random() * (i + 1));
-
-            // Swap elements
             [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return arr;
@@ -253,13 +264,23 @@
     }
 
     const executeGameOver = () => {
+        clearInterval(interval);
         editableCells = Array(9)
             .fill(false)
             .map(() => Array(9).fill(false));
     };
 
+    const eraseSelection = () => {
+        if (selectedIndex[0] >= 0 && selectedIndex[1] >= 0) {
+            grid[selectedIndex[0]][selectedIndex[1]] = 0;
+            selectedIndex = [-1, -1];
+        }
+    };
+
     $: {
         if (numMistakes >= 3) {
+            failed = true;
+            showModal = true;
             executeGameOver();
         }
         if (newPuzzle) {
@@ -292,14 +313,33 @@
 </script>
 
 <div class="h-full">
+    {#if succeeded}
+        <SimpleModal bind:popupModal={showModal}>
+            Solved! Try a new puzzle by closing this message and clicking "New
+            Puzzle".
+        </SimpleModal>
+    {:else if failed}
+        <SimpleModal bind:popupModal={showModal}
+            >Failed. Try a new puzzle by closing this message and clicking "New
+            Puzzle".</SimpleModal
+        >
+    {:else}
+        <SimpleModal bind:popupModal={showModal}>
+            Sudoku is a puzzle where you fill a 9x9 grid with numbers from
+            1 to 9. Each row, column, and 3x3 subgrid must contain every number
+            from 1 to 9 without repetition. The main goal is to complete the grid
+            based on these rules.
+        </SimpleModal>
+    {/if}
     {#if showGrid}
         <div
-            class="flex grid grid-cols-3 xs:mx-16 sm:mx-40 md:mx-50 lg:mx-60"
+            class="flex grid grid-cols-3 xs:mx-8 sm:mx-40 md:mx-50 lg:mx-60"
             in:fly={{ x: -1000, duration: 1000 }}
             out:fly={{ x: 1000, duration: 1000, opacity: 0 }}
         >
             <P size="sm">Mistakes: {numMistakes}/3</P>
-            <div class="flex justify-center">
+            <div class="flex justify-center space-x-2">
+                <!--
                 <P size="sm"
                     >{solvedSudoku
                         ? "Solved!"
@@ -307,6 +347,27 @@
                           ? "Failed. Try New Puzzle?"
                           : ""}</P
                 >
+                    -->
+                <div
+                    on:click={() => {
+                        showModal = true;
+                    }}
+                >
+                    <Icon
+                        src={AiFillInfoCircle}
+                        color="white"
+                        size="24"
+                        viewBox="0 0 1024 1024"
+                        className="custom-icon hover:cursor-pointer"
+                        title="Custom icon params"
+                    />
+                </div>
+                <img
+                    src={Eraser}
+                    class="hover:cursor-pointer"
+                    alt="Eraser"
+                    on:click={eraseSelection}
+                />
             </div>
             <div class="flex justify-end">
                 <P size="sm">{formatTime(timer)}</P>
@@ -343,12 +404,10 @@
                                 <div
                                     class={correctAnswers[rowIndex][colIndex] &&
                                     editableCells[rowIndex][colIndex]
-                                        ? "text-green-600"
+                                        ? "text-sky-400"
                                         : editableCells[rowIndex][colIndex]
                                           ? "text-red-600"
-                                          : editableCells[rowIndex][colIndex]
-                                            ? "text-sky-400"
-                                            : "text-white"}
+                                          : "text-white"}
                                 >
                                     {#if cell != 0}
                                         {cell}

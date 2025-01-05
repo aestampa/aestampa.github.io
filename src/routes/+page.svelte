@@ -16,7 +16,6 @@
     import RubyOnRailsLogo from "$lib/images/ruby-on-rails.png";
     import { OnMount } from "fractils";
     import { fly } from "svelte/transition";
-    import HomeBackground from "$lib/images/gold-black-abstract.jpg";
     import NavigationArrow from "$lib/components/NavigationArrow.svelte";
     import { scrollTo, scrollRef, setGlobalOptions } from "svelte-scrolling";
     import { cubicInOut } from "svelte/easing";
