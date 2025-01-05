@@ -50,7 +50,7 @@
 
     let selectedIndex: number[] = [-1, -1];
 
-    let numOmissions: number = 1;
+    let numOmissions: number = 50;
     let numMistakes: number = 0;
     let timer: number = 0;
     let showGrid: boolean = false;
