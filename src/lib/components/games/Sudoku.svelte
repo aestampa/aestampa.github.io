@@ -80,13 +80,15 @@
     };
 
     const updateSelection = (selectedNumber: number) => {
-        grid[selectedIndex[0]][selectedIndex[1]] = selectedNumber;
-        updateGrid();
-        if (!correctAnswers[selectedIndex[0]][selectedIndex[1]]) {
-            numMistakes++;
+        if (grid[selectedIndex[0]][selectedIndex[1]] != selectedNumber) {
+            grid[selectedIndex[0]][selectedIndex[1]] = selectedNumber;
+            updateGrid();
+            if (!correctAnswers[selectedIndex[0]][selectedIndex[1]]) {
+                numMistakes++;
+            }
+            selectedIndex = [-1, -1];
+            countOccurrences(grid);
         }
-        selectedIndex = [-1, -1];
-        countOccurrences(grid);
     };
 
     const highlightedBox = (rowIndex: number, colIndex: number) => {
@@ -129,7 +131,7 @@
         if (solvedSudoku) solvedSudoku = false;
         timer = 0;
         interval = setInterval(() => {
-            timer += 1; // Increment timer every second
+            timer += 1;
         }, 1000);
         showGrid = true;
     };
@@ -325,10 +327,15 @@
         >
     {:else}
         <SimpleModal bind:popupModal={showModal}>
-            Sudoku is a puzzle where you fill a 9x9 grid with numbers from
-            1 to 9. Each row, column, and 3x3 subgrid must contain every number
-            from 1 to 9 without repetition. The main goal is to complete the grid
+            Sudoku is a puzzle where you fill a 9x9 grid with numbers from 1 to
+            9. Each row, column, and 3x3 subgrid must contain every number from
+            1 to 9 without repetition. The main goal is to complete the grid
             based on these rules.
+            <br />
+            <br />
+            Click on a cell and fill in a number using the selection below the grid.
+            However, entering the wrong number will count as a mistake. Make three
+            mistakes and you will fail the puzzle. Good luck!
         </SimpleModal>
     {/if}
     {#if showGrid}
@@ -339,15 +346,6 @@
         >
             <P size="sm">Mistakes: {numMistakes}/3</P>
             <div class="flex justify-center space-x-2">
-                <!--
-                <P size="sm"
-                    >{solvedSudoku
-                        ? "Solved!"
-                        : numMistakes >= 3
-                          ? "Failed. Try New Puzzle?"
-                          : ""}</P
-                >
-                    -->
                 <div
                     on:click={() => {
                         showModal = true;

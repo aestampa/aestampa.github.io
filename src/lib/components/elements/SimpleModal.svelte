@@ -5,7 +5,7 @@
 
 <Modal bind:open={popupModal} size="xs" autoclose outsideclose>
     <br />
-    <div class="text-center text-white">
+    <div class="text-start text-white">
         <slot />
     </div>
 </Modal>
