@@ -28,7 +28,7 @@
     isNavHamburgerOpen = true;
   };
 
-  $: if (activeUrl) {
+  $: if (activeUrl && isNavHamburgerOpen) {
     hideNavMenu = true;
   }
 </script>
