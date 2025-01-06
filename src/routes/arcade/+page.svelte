@@ -2,11 +2,13 @@
     import { Button, Card, P } from "flowbite-svelte";
     import { Modal } from "flowbite-svelte";
     import SudokuImage from "$lib/images/sudoku.jpg";
+    import MancalaImage from "$lib/images/MancalaImage.jpg";
     import Sudoku from "$lib/components/games/Sudoku.svelte";
     import { fade, fly } from "svelte/transition";
     import { onMount } from "svelte";
 
     let sudokuOpened: boolean = false;
+    let mancalaOpened: boolean = false;
     let newPuzzle: boolean = false;
     let solvedSudoku: boolean = false;
     let seenGames: boolean = false;
