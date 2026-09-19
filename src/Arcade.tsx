@@ -9,9 +9,11 @@ import {
 } from "@/components/ui/card"
 import GlobeImage from "./assets/globe.png";
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Arcade() {
     const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleResize = () => {
@@ -48,7 +50,7 @@ function Arcade() {
                         </CardDescription>
                     </CardHeader>
                     <CardFooter>
-                        <Button disabled={isMobile} className="w-full cursor-pointer" onClick={() => window.open('/Arcade/Cesium')}>{isMobile ? 'Compatible with PC Only' : 'View Project'}</Button>
+                        <Button disabled={isMobile} className="w-full cursor-pointer" onClick={() => navigate('/arcade/cesium')}>{isMobile ? 'Compatible with PC Only' : 'View Project'}</Button>
                     </CardFooter>
                 </Card>
             </div>

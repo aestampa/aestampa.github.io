@@ -74,7 +74,7 @@ export default class Cesium extends React.PureComponent {
     return (
       <Viewer full>
         <ImageryLayer
-          imageryProvider={IonImageryProvider.fromAssetId(3)}
+          imageryProvider={IonImageryProvider.fromAssetId(3, {})}
         />
         {this.state.locations.map((loc: Location, i) => (
           <Entity

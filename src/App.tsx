@@ -29,8 +29,8 @@ function App() {
 
       <nav className="top-navbar">
         <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/')}>HOME</h4>
-        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/About')}>ABOUT</h4>
-        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/Arcade')}>ARCADE</h4>
+        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/about')}>ABOUT</h4>
+        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/arcade')}>ARCADE</h4>
         <div className={`media-container ${isFirstLoad ? 'fade-in-delay-3' : ''}`}>
           <img src={githubLogo} alt="GitHub logo" className="media-element" />
           <img src={linkedInLogo} alt="LinkedIn logo" className="media-element" />
