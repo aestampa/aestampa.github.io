@@ -37,7 +37,7 @@ function App() {
         </div>
 
         <div className={`media-container ${isFirstLoad ? 'fade-in-delay-3' : ''}`}>
-          <img src={githubLogo} alt="GitHub logo" className="media-element" />
+          <img src={githubLogo} alt="GitHub logo" className="media-element" onClick={() => window.open("https://github.com/aestampa", "_blank")}/>
           <img src={linkedInLogo} alt="LinkedIn logo" className="media-element" />
         </div>
       </nav>
