@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <main className="page-body">
-        <section className="hero">
+        <section>
           <h1 className="meie-script-regular fade-in">Abigail Estampador</h1>
           <br />
           <p className="rosarivo-regular fade-in-delay">Full-Stack Software Engineer Based In Colorado Springs</p>

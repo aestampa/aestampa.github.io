@@ -25,12 +25,17 @@ function App() {
       }, []);
   return (
     <>
-      <img className={`initials-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} src={initials} onClick={() => navigate('/')} alt="Initials logo" />
-
       <nav className="top-navbar">
-        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/')}>HOME</h4>
-        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/about')}>ABOUT</h4>
-        <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/arcade')}>ARCADE</h4>
+        <div className="nav-left-group">
+          <img className={`initials-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} src={initials} onClick={() => navigate('/')} alt="Initials logo" />
+        </div>
+
+        <div className="nav-center-group">
+          <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/')}>HOME</h4>
+          <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/about')}>ABOUT</h4>
+          <h4 className={`navbar-element ${isFirstLoad ? 'fade-in-delay-3' : ''}`} onClick={() => navigate('/arcade')}>ARCADE</h4>
+        </div>
+
         <div className={`media-container ${isFirstLoad ? 'fade-in-delay-3' : ''}`}>
           <img src={githubLogo} alt="GitHub logo" className="media-element" />
           <img src={linkedInLogo} alt="LinkedIn logo" className="media-element" />
