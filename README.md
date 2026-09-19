@@ -1,7 +1,7 @@
 # Personal Website Using React + TypeScript + Vite
 This TypeScript + React personal website built with Vite showcases my biography, mini-projects, and lists of skills, experiences, and education.
 
-## Hosted on: {link}
+## Hosted on: [https://aestampa.github.io](https://aestampa.github.io)
 
 ## Mini-Projects
 ### Current Events Globe
