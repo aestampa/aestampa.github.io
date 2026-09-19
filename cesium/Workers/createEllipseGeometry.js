@@ -1,7 +1,7 @@
 /**
  * @license
  * Cesium - https://github.com/CesiumGS/cesium
- * Version 1.109
+ * Version 1.145.0
  *
  * Copyright 2011-2022 Cesium Contributors
  *
@@ -23,4 +23,4 @@
  * See https://github.com/CesiumGS/cesium/blob/main/LICENSE.md for full licensing details.
  */
 
-import{a as o}from"./chunk-QQYGWYOJ.js";import"./chunk-SKT4NNP6.js";import"./chunk-GSCCE6TP.js";import"./chunk-GH2M3QEY.js";import"./chunk-YZMLQP2E.js";import"./chunk-BSOA334C.js";import"./chunk-YYCOBWZH.js";import"./chunk-M3OLDEEW.js";import"./chunk-YYMHH3T4.js";import"./chunk-ATQXFTWF.js";import"./chunk-67OQHZOZ.js";import"./chunk-FUN3J34G.js";import"./chunk-A4RD4IQP.js";import"./chunk-NNIY7VTE.js";import"./chunk-NX64RCXJ.js";import"./chunk-5EDTRNG5.js";import"./chunk-IO6LETQ6.js";import{a as t,c}from"./chunk-C6Y3PRDH.js";import"./chunk-LI57NJAL.js";import"./chunk-IBAO62UG.js";import"./chunk-3NARV6MR.js";import"./chunk-P44SUSQU.js";import"./chunk-FUATUYJ3.js";import{e as n}from"./chunk-ODUTJJQ5.js";function a(r,i){return n(i)&&(r=o.unpack(r,i)),r._center=t.clone(r._center),r._ellipsoid=c.clone(r._ellipsoid),o.createGeometry(r)}var u=a;export{u as default};
+import{a as o}from"./chunk-MVPJ3TXD.js";import"./chunk-PJAQIYS5.js";import"./chunk-MMOHJWGL.js";import"./chunk-6BBZNYDX.js";import"./chunk-KRWMVIB7.js";import"./chunk-5ZC5RGYZ.js";import"./chunk-FR3EIV3D.js";import"./chunk-KUNU57LF.js";import"./chunk-U6RTDYNE.js";import"./chunk-NVY6OTQX.js";import"./chunk-2X5O55FT.js";import"./chunk-CAOBKNCT.js";import"./chunk-4FYX2TIB.js";import"./chunk-GME3JRJ5.js";import"./chunk-H3LK4GAX.js";import"./chunk-NQ23OHF7.js";import"./chunk-YO6NOGYA.js";import"./chunk-6ZKGZZOJ.js";import"./chunk-7VKG2T2K.js";import"./chunk-PORF43EC.js";import{c}from"./chunk-LK26B6IJ.js";import{a as t}from"./chunk-2Z5ROPWA.js";import"./chunk-KGDHXBGK.js";import"./chunk-SLUQ566D.js";import{f as n}from"./chunk-K7WHNMF7.js";function a(r,i){return n(i)&&(r=o.unpack(r,i)),r._center=t.clone(r._center),r._ellipsoid=c.clone(r._ellipsoid),o.createGeometry(r)}var u=a;export{u as default};
