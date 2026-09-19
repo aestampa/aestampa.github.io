@@ -52,7 +52,11 @@ function ExperienceList() {
             <img src={Trace3Logo} alt="Zivaro logo" style={{ width: '100px', height: '100px', objectFit: 'contain' }} />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Trace3 <div className="italic text-xs">(Acquisition)</div>— Software Engineer</ItemTitle>
+          <ItemTitle className="flex-wrap gap-1">
+            <span>Trace3</span>
+            <span className="italic text-xs">(Acquisition)</span>
+            <span>— Software Engineer</span>
+          </ItemTitle>
           <ItemDescription className="text-white">
             April 2025 - Present
           </ItemDescription>
