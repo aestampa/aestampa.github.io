@@ -64,7 +64,7 @@ function ExperienceList() {
             <ul className="text-left text-xs list-disc pl-5 space-y-1 marker:text-white">
               <li>Developed and maintained Java backend services, integrating frontend systems with Oracle data layers</li>
               <li>Built and supported XML-based APIs by executing database queries and handling data serialization in Java</li>
-              <li>Managed SQL/PLSQL queries and Ant build processes for application deployment</li>
+              <li>Developed SQL/PLSQL queries and supported Ant build processes for application deployment</li>
             </ul>
           </div>
         </ItemContent>
