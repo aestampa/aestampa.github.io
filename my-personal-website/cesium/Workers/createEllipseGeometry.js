@@ -1,7 +1,7 @@
 /**
  * @license
  * Cesium - https://github.com/CesiumGS/cesium
- * Version 1.140.0
+ * Version 1.145.0
  *
  * Copyright 2011-2022 Cesium Contributors
  *
@@ -23,4 +23,4 @@
  * See https://github.com/CesiumGS/cesium/blob/main/LICENSE.md for full licensing details.
  */
 
-import{a as o}from"./chunk-XQHLGIO7.js";import"./chunk-LI2ZSORM.js";import"./chunk-UBOGZS7F.js";import"./chunk-2EQO3Q56.js";import"./chunk-SQMIIXB7.js";import"./chunk-M4HLDBCG.js";import"./chunk-ICALLYLG.js";import"./chunk-EQ4YRVWL.js";import"./chunk-CTHM3W6I.js";import"./chunk-5TJMAQVL.js";import"./chunk-W37FE5GR.js";import"./chunk-Q5BPHJQF.js";import"./chunk-NMVKML6W.js";import"./chunk-2TE5NTVD.js";import"./chunk-CUUSNIVQ.js";import"./chunk-BXMEEOCS.js";import"./chunk-23ZQ2IVV.js";import"./chunk-XUSCFAVF.js";import"./chunk-BTSYJ5XU.js";import"./chunk-EDVBB7SS.js";import{c}from"./chunk-FFBVWF2L.js";import{a as t}from"./chunk-QKUIYMGC.js";import"./chunk-WBOV35NL.js";import"./chunk-TNSUQXWK.js";import{e as n}from"./chunk-ILRYTWTP.js";function a(r,i){return n(i)&&(r=o.unpack(r,i)),r._center=t.clone(r._center),r._ellipsoid=c.clone(r._ellipsoid),o.createGeometry(r)}var u=a;export{u as default};
+import{a as o}from"./chunk-MVPJ3TXD.js";import"./chunk-PJAQIYS5.js";import"./chunk-MMOHJWGL.js";import"./chunk-6BBZNYDX.js";import"./chunk-KRWMVIB7.js";import"./chunk-5ZC5RGYZ.js";import"./chunk-FR3EIV3D.js";import"./chunk-KUNU57LF.js";import"./chunk-U6RTDYNE.js";import"./chunk-NVY6OTQX.js";import"./chunk-2X5O55FT.js";import"./chunk-CAOBKNCT.js";import"./chunk-4FYX2TIB.js";import"./chunk-GME3JRJ5.js";import"./chunk-H3LK4GAX.js";import"./chunk-NQ23OHF7.js";import"./chunk-YO6NOGYA.js";import"./chunk-6ZKGZZOJ.js";import"./chunk-7VKG2T2K.js";import"./chunk-PORF43EC.js";import{c}from"./chunk-LK26B6IJ.js";import{a as t}from"./chunk-2Z5ROPWA.js";import"./chunk-KGDHXBGK.js";import"./chunk-SLUQ566D.js";import{f as n}from"./chunk-K7WHNMF7.js";function a(r,i){return n(i)&&(r=o.unpack(r,i)),r._center=t.clone(r._center),r._ellipsoid=c.clone(r._ellipsoid),o.createGeometry(r)}var u=a;export{u as default};
