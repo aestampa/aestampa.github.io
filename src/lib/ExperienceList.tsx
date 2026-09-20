@@ -22,8 +22,8 @@ function ExperienceList() {
           </ItemDescription>
           <div className="text-white">
             <ul className="text-left text-xs list-disc pl-5 space-y-1 marker:text-white">
-              <li>Developed responsive UIs using Svelte and Tailwind CSS</li>
-              <li>Built and integrated RESTful APIs with C#, Entity Framework, and SQL</li>
+              <li>Worked with experienced developers to develop responsive UIs using Svelte and Tailwind CSS</li>
+              <li>Used Azure DevOps and VS Code to support development workflows</li>
               <li>Delivered features and bug fixes in an Agile environment, supporting design and testing</li>
             </ul>
           </div>
@@ -41,8 +41,8 @@ function ExperienceList() {
           <div className="text-white">
             <ul className="text-left text-xs list-disc pl-5 space-y-1 marker:text-white">
               <li>Built front-end applications with Svelte and Tailwind CSS in an Agile team</li>
-              <li>Applied Test-Driven Development using Vitest and Playwright</li>
-              <li>Used Azure DevOps and VS Code to support development workflows</li>
+              <li>Built and integrated RESTful APIs with C#, Entity Framework, and SQL</li>
+              <li>Developed features for a Cesium geospatial app using Node.js, Python, and GitLab CI/CD</li>
             </ul>
           </div>
         </ItemContent>
